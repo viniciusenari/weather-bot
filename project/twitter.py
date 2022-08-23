@@ -1,4 +1,4 @@
-from config import twitter_api_key, twitter_api_key_secret, twitter_access_token, twitter_access_token_secret
+from project.config import twitter_api_key, twitter_api_key_secret, twitter_access_token, twitter_access_token_secret
 import tweepy
 
 class Twitter:
