@@ -81,6 +81,6 @@ python main.py
 Here is an example of how the tweet post will look like:  
 ![Tweet Post Example](assets/tweet-post-example.png)
 
-There are limited endpoints one can make requests for free on the Open Weather API. I'm using both the [**Current Wheater**](https://openweathermap.org/current) and the [**5-day / 3-hour forecast**](https://openweathermap.org/forecast5). The current weather I use to get the first hour data (6 am on the example). The 5-day/ 3-hour forecast provides a forecast for the next five days with a 3-hour step starting from the next step that is more than 3 hours ahead. I take the next six measurements from this endpoint.
+There are limited endpoints one can make requests for free on the Open Weather API. I'm using both the [**Current Weather**](https://openweathermap.org/current) and the [**5-day / 3-hour forecast**](https://openweathermap.org/forecast5). The current weather I use to get the first hour data (6 am on the example). The 5-day/ 3-hour forecast provides a forecast for the next five days with a 3-hour step starting from the next step that is more than 3 hours ahead. I take the next six measurements from this endpoint.
 
 Finally, you can set up a cloud scheduler to run this script daily, and your bot account will make posts about the weather forecast every day.
