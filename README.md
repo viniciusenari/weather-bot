@@ -45,11 +45,11 @@ ACCESS_TOKEN = "YOUR_TWITTER_ACCESS_TOKEN"
 ACCESS_TOKEN_SECRET = "YOUR_TWITTER_ACCESS_TOKEN_SECRET"
 WEATHER_API_KEY = "YOUR_OPEN_WEATHER_API_KEY"
 ```
-If you want to change the bot to post the forecast for a specific city or region, change the latitude (`lat`) and longitude (`lon`) parameters on the URL of the request. You can also change the unit of measurement from Celsius to Fahrenheit by changing the `units` parameter from metric to imperial. The request is on [projects/weather.py](https://github.com/viniciusenari/weather-bot/blob/main/project/weather.py) **line 11**.
+If you want to change the bot to post the forecast for a specific city or region, change the latitude (`lat`) and longitude (`lon`) parameters on `weather.get_data()`. You can also change the unit of measurement from Celsius to Fahrenheit by changing the `units` parameter from metric to imperial. This is called on [**main.py**](https://github.com/viniciusenari/weather-bot/blob/main/main.py) **line 17**.
 ```py
-response = requests.get(f'http://api.openweathermap.org/data/2.5/forecast?lat=-23.55&lon=-46.64&appid={weather_api_key}&units=metric')
+weather.get_data(lat = "-23.55", lon = "-46.64", units="metric")
 ```
-On the same file, on **line 21**, you may change the tweet message.
+On [**projects/weather.py**](https://github.com/viniciusenari/weather-bot/blob/main/project/weather.py) **line 21**, you may change the tweet message.
 ```py
 def create_tweet(self):
     text = f'Previsão do tempo do dia {format_day(self.forecast[0]["datetime"].date())}\n'
@@ -81,6 +81,6 @@ python main.py
 Here is an example of how the tweet post will look like:
 ![Tweet Post Example](assets/tweet-post-example.png)
 
-There are limited endpoints one can make requests for free on the Open Weather API. I'm using [**5-day / 3-hour forecast**](https://openweathermap.org/forecast5), which provides a forecast for the next five days with a 3-hour step starting from the next step that is more than 3 hours ahead. I am only taking the data for the following seven measurements, which provide the forecast for the day.
+There are limited endpoints one can make requests for free on the Open Weather API. I'm using both the [**Current Wheater**](https://openweathermap.org/current) and the [**5-day / 3-hour forecast**](https://openweathermap.org/forecast5). The current weather I use to get the first hour data (6 am on the example). The 5-day/ 3-hour forecast provides a forecast for the next five days with a 3-hour step starting from the next step that is more than 3 hours ahead. I take the next six measurements from this endpoint.
 
 Finally, you can set up a cloud scheduler to run this script daily, and your bot account will make posts about the weather forecast every day.
