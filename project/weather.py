@@ -1,7 +1,7 @@
 import requests
-from config import weather_api_key
+from project.config import weather_api_key
 from datetime import datetime, time, timedelta
-from utils import is_time_between, create_icon, format_day
+from project.utils import is_time_between, create_icon, format_day
 
 class WeatherAPI:
     def __init__(self):
