@@ -10,7 +10,7 @@ class WeatherAPI:
     def get_data(self, lat, lon, units = 'metric'):
         # Get current weather
         response = requests.get(f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={weather_api_key}&units={units}')
-        datetime_object = datetime.now() + timedelta(hours=0.5)
+        datetime_object = datetime.now() - timedelta(hours = 2.5)
         day = True if is_time_between(time(6,0), time(18,1), datetime_object.time()) else False
         self.forecast.append({
             'temperature' : (float(response.json()['main']['temp_min']) + float(response.json()['main']['temp_min'])) / 2,
