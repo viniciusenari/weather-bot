@@ -26,7 +26,7 @@ Activate your virtual environment. On Windows:
 your-env\Scripts\activate
 ```
 
-On Unix or macOS:
+On Linux or macOS:
 ```
 source your-env/bin/activate
 ```
