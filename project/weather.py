@@ -30,7 +30,7 @@ class WeatherAPI:
             })
 
     def create_tweet(self):
-        text = f'Previsão do tempo do dia {format_day(self.forecast[0]["datetime"].date())}\n'
+        text = f'Dia {format_day(self.forecast[0]["datetime"].date())}\n'
         for data in self.forecast:
             text += f'{data["datetime"].time().strftime("%H")}h - {data["icon"]} {data["temperature"] :.0f}°C \n'
 

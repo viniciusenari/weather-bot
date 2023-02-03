@@ -2,8 +2,11 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-twitter_api_key = os.getenv("API_KEY")
-twitter_api_key_secret = os.getenv("API_KEY_SECRET")
-twitter_access_token = os.getenv("ACCESS_TOKEN")
-twitter_access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
+auth_multi = os.getenv("AUTH_MULTI")
+auth_token = os.getenv("AUTH_TOKEN")
+personalization_id = os.getenv("PERSONALIZATION_ID")
+twid = os.getenv("TWID")
+bearer = os.getenv("BEARER")
+csrf_token = os.getenv("CSRF_TOKEN")
+
 weather_api_key = os.getenv("WEATHER_API_KEY")
